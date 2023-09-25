@@ -1,6 +1,7 @@
 import gradio as gr
 import prodia_image_gen as pr
-from gradio import themes as th
+
+
 def generate_image(model,promt,negative_prompt,aspect_ratio,steps,cfg_scale,seed,upscale,sampler):
     return pr.generate_gradio(model,promt,negative_prompt,aspect_ratio,steps,cfg_scale,seed,upscale,sampler),pr.galimg
 
@@ -22,7 +23,7 @@ gr.Interface(fn=generate_image,
                                          label="Example output Images",show_label=True,height="700px",show_share_button=True)],title="Imagto",description="Let you imagination speak. Type what's on your mind and see the magic happen.",
                                          examples=[[pr.models[34],pr.ex_prompt1,pr.ex_nprompt1,"landscape",25,7,-1,False,"DPM++ 2M Karras"],[pr.models[34],pr.ex_prompt2,pr.ex_nprompt2,"landscape",25,7,-1,False,"DPM++ 2M Karras"],
                                                    [pr.models[16],pr.ex_prompt3,pr.ex_nprompt3,"landscape",25,7,-1,False,"DPM++ 2M Karras"],[pr.models[18],pr.ex_prompt4,pr.ex_nprompt4,"landscape",25,7,-1,False,"DPM++ 2M Karras"]],
-                                         article="MADE BY VIGNESH https://www.linkedin.com/in/vignesh-m20").launch(server_name="0.0.0.0",server_port=3000)
+                                         article="MADE BY VIGNESH [Follow mw on LinkedIn](https://www.linkedin.com/in/vignesh-m20)").launch()
 
 
 
