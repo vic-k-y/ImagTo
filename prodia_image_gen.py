@@ -43,6 +43,12 @@ def retrive_image(job_id):
     
     while result["status"] != "succeeded":  # wait until the image is ready
         result = requests.get(url, headers=headers).json()
+        for i in range(11):
+            if i <9:
+                time.sleep(1)
+            else:
+                raise TimeoutError
+                break
         
     return result["imageUrl"]
 
