@@ -20,7 +20,7 @@ sampler = gr.Dropdown(choices=pr.sampler,label="Sampler",value="DPM++ 2M Karras"
 gr.Interface(fn=generate_image,
              inputs=[model,promt,negative_prompt,aspect_ratio,steps,cfg_scale,seed,upscale,sampler],
              outputs=["image",gr.Gallery(pr.galimg,
-                                         label="Example output Images",show_label=True,height="700px",show_share_button=True)],title="ImagTo",description="Let you imagination speak. Type what's on your mind and see the magic happen.",
+                                         label="Example output Images",show_label=True,show_share_button=True)],title="ImagTo",description="Let you imagination speak. Type what's on your mind and see the magic happen.",
                                          examples=[[pr.models[34],pr.ex_prompt1,pr.ex_nprompt1,"landscape",25,7,-1,False,"DPM++ 2M Karras"],[pr.models[34],pr.ex_prompt2,pr.ex_nprompt2,"landscape",25,7,-1,False,"DPM++ 2M Karras"],
                                                    [pr.models[16],pr.ex_prompt3,pr.ex_nprompt3,"landscape",25,7,-1,False,"DPM++ 2M Karras"],[pr.models[18],pr.ex_prompt4,pr.ex_nprompt4,"landscape",25,7,-1,False,"DPM++ 2M Karras"]],
                                          article="MADE BY VIGNESH [Follow mw on LinkedIn](https://www.linkedin.com/in/vignesh-m20)").launch()
