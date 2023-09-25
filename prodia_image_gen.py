@@ -47,7 +47,7 @@ def retrive_image(job_id):
             if i <9:
                 time.sleep(1)
             else:
-                return none
+                return None
                 break
         
     return result["imageUrl"]
