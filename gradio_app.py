@@ -23,7 +23,7 @@ gr.Interface(fn=generate_image,
                                          label="Example output Images",show_label=True,height="700px",columns=3,preview=False,show_share_button=True)],title="ImagTo",description="Let you imagination speak. Type what's on your mind and see the magic happen.",
                                          examples=[[pr.models[34],pr.ex_prompt1,pr.ex_nprompt1,"landscape",25,7,-1,False,"DPM++ 2M Karras"],[pr.models[34],pr.ex_prompt2,pr.ex_nprompt2,"landscape",25,7,-1,False,"DPM++ 2M Karras"],
                                                    [pr.models[16],pr.ex_prompt3,pr.ex_nprompt3,"landscape",25,7,-1,False,"DPM++ 2M Karras"],[pr.models[18],pr.ex_prompt4,pr.ex_nprompt4,"landscape",25,7,-1,False,"DPM++ 2M Karras"]],
-                                         article="MADE BY VIGNESH [Follow mw on LinkedIn](https://www.linkedin.com/in/vignesh-m20)").queue(concurrency_count=50,max_size=50).launch(show_api=False)
+                                         article="MADE BY VIGNESH [Follow me on LinkedIn](https://www.linkedin.com/in/vignesh-m20)").queue(concurrency_count=50,max_size=50).launch(show_api=False)
 
 
 
