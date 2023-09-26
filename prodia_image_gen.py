@@ -40,8 +40,18 @@ def retrive_image(job_id):
     response = requests.get(url, headers=headers)
     #print(response.text)
     result = response.json()
+
+    for i in range(50):
+        if result["status"] != "succeeded":
+            time.sleep(1)
+            result = requests.get(url, headers=headers).json()
+        elif i==49:
+            raise gr.error("Unintentional error")
+        else:
+            return result["imageUrl"]
+            
     
-    while result["status"] != "succeeded":  # wait until the image is ready
+    """while result["status"] != "succeeded":  # wait until the image is ready
         result = requests.get(url, headers=headers).json()
         for i in range(11):
             if i <9:
@@ -49,7 +59,7 @@ def retrive_image(job_id):
             else:
                 break
         
-    return result["imageUrl"]
+    return result["imageUrl"]"""
 
 #save the image to the current directory
 def save_image(image_url):
