@@ -2,9 +2,11 @@ import requests
 import time
 from io import BytesIO
 from PIL import Image
+import os
 
 
 url = "https://api.prodia.com/v1/sd/generate"
+api_key = os.environ['API_KEY']
 def api_call_send(model,promt,negative_prompt,aspect_ratio,steps,cfg_scale,seed,upscale,sampler):
     payloadsend = {
         "model": model,
@@ -21,7 +23,7 @@ def api_call_send(model,promt,negative_prompt,aspect_ratio,steps,cfg_scale,seed,
     headerssend = {
         "accept": "application/json",
         "content-type": "application/json",
-        "X-Prodia-Key": "596e85a1-b3ae-49fb-ae11-cee1c4f78eee"
+        "X-Prodia-Key": api_key
     }
 
     response = requests.post(url, json=payloadsend, headers=headerssend)
